@@ -1,5 +1,7 @@
 #!/bin/sh
 # Configuracion basica del firewall UFW
+echo reiniciaremos el firewall
+ufw reset
 echo 
 echo Cerramos todo el trafico hacia nuestro equipo, nos quedaremos sin internet.
 echo
