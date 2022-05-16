@@ -12,4 +12,6 @@ echo
 ufw allow in on l0 
 ufw deny in from 127.0.0.0/8
 ufw allow out on enp11s0
+ufw enable
+ufw reload
 # Nota recordar que  enp11s0 es el nombre de mi interface ,pudiera ser cualquiera.
