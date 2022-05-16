@@ -1,3 +1,4 @@
+#!/bin/sh
 # Liberar Memoria Ram y Swap
 echo
 echo ------------------------------
