@@ -1,6 +1,7 @@
 
 ##############################################################################################
 # Siempre hacer una copia del original, usar este comando para hacerla sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.backup #
+# Despues reiniciar el :  servicio con service ssh restart
 ##############################################################################################
 
 #       $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
