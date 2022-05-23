@@ -12,6 +12,12 @@ dpkg --list
 dpkg --info packageName
 apt-get remove packageName
 
+##### Mantenimiento de paquetes ###########
+
+sudo apt autoclean
+apt autoremove -y
+
+
 ########### Paquetes innecesarios y vulnerables ############
 sudo apt-get --purge remove xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redone-server
 yum erase xinetd ypserv tftp-server telnet-server rsh-server
