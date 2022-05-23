@@ -1,0 +1,9 @@
+######  Comandos basicos para puertos en linux #######
+
+# Identifica todos los puertos abiertos:
+# Utiliza el siguiente comando para que se despliegue el listado de todos los puertos que están abiertos, además de los programas asociados:
+
+           sudo netstat -tulpn
+           sudo ss -tulpn
+#######################################################
+
