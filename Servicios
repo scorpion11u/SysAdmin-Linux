@@ -1,0 +1,10 @@
+########## Servicios en linux ###################
+### NOTA: este archivo se sigue modificando #####
+
+sudo systemctl restart fail2ban.service
+sudo systemctl stop fail2ban.service
+sudo systemctl start fail2ban.service
+
+sudo service fail2ban restart
+sudo service fail2ban stop
+sudo service fail2ban start
