@@ -1,3 +1,4 @@
+#!/bin/sh
 echo
 echo Recargar sysctl.conf  y ufw Firewall 
 echo
