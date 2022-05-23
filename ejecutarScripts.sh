@@ -1,5 +1,5 @@
 echo
-echo recargar sysctl.conf  y ufw Firewall 
+echo Recargar sysctl.conf  y ufw Firewall 
 echo
 echo ------------------------------------
 sudo ufw reload 
