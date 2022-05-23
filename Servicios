@@ -8,3 +8,34 @@ sudo systemctl start fail2ban.service
 sudo service fail2ban restart
 sudo service fail2ban stop
 sudo service fail2ban start
+
+###########  Deshabilite los servicios de Linux no deseados ##############
+chkconfig --list | grep '3:on'
+
+service serviceName stop
+chkconfig serviceName off
+
+##########  niveles de ejecución está activado o desactivado ###########
+
+ systemctl list-unit-files --type=service
+ systemctl list-dependencies graphical.target
+ 
+ ########### Apague el servicio en el momento del arranque ######
+systemctl disable service
+systemctl disable httpd.service
+
+###### Iniciar/detener/reiniciar servicio #########
+systemctl disable service
+systemctl disable httpd.service
+
+######### Obtener estado del servicio ######
+ systemctl status service
+ systemctl status httpd.service
+
+####  Visualización de mensajes de registro ########
+journalctl
+journalctl -u network.service
+journalctl -u ssh.service
+journalctl -f
+journalctl -k
+ 
