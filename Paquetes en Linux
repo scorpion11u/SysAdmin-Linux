@@ -1,5 +1,16 @@
+####### Minimice el software para minimizar la vulnerabilidad en Linux ########
+
+yum list installed
+yum list packageName
+yum remove packageName
+
+dpkg --list
+dpkg --info packageName
+apt-get remove packageName
+
 ########### Paquetes innecesarios y vulnerables ############
 sudo apt-get --purge remove xinetd nis yp-tools tftpd atftpd tftpd-hpa telnetd rsh-server rsh-redone-server
 yum erase xinetd ypserv tftp-server telnet-server rsh-server
 
-#########  
+##########
+
