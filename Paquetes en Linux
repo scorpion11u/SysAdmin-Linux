@@ -1,3 +1,7 @@
+########## Actualizar sistema ###############
+yum update
+apt-get update && apt-get upgrade
+
 ####### Minimice el software para minimizar la vulnerabilidad en Linux ########
 
 yum list installed
