@@ -1,8 +1,0 @@
-###### Este es el comando que te permitirá deshabilitar dispositivos USB en tu servidor Linux ##########
-echo 'install usb-storage /bin/true' >> /etc/modprobe.d/disable-usb-storage.conf
-
-##### El mismo método se puede aplicar para la inhabilitación de los dispositivos thunderbolt #########
-echo "blacklist thunderbolt" >> /etc/modprobe.d/thunderbolt.conf
-
-#### Así también, los dispositivos firewire ################
-echo "blacklist firewire-core" >> /etc/modprobe.d/firewire.conf
