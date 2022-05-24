@@ -7,5 +7,7 @@
            sudo ss -tulpn
            
            nmap -sT -O localhost
-#######################################################
+
+########### Conexiones activas ###################
+netstat -vant
 
