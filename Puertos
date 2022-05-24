@@ -5,5 +5,7 @@
 
            sudo netstat -tulpn
            sudo ss -tulpn
+           
+           nmap -sT -O localhost
 #######################################################
 
