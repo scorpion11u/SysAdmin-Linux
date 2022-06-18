@@ -1,0 +1,23 @@
+# Estos directorios deben tener los siguientes permisos 700 y 400 
+#
+# Ejemplo chmod 700  /etc/group
+#
+# [+] Permisos de ficheros
+------------------------------------
+  - Starting file permissions check
+    File: /boot/grub/grub.cfg                400                 [ OK ]
+    File: /etc/crontab                       400                 [ OK ]
+    File: /etc/group                         700                 [ OK ]
+    File: /etc/group-                        700                [ OK ]
+    File: /etc/hosts.allow                   700                 [ OK ]
+    File: /etc/hosts.deny                    700                 [ OK ]
+    File: /etc/issue                         700                [ OK ]
+    File: /etc/issue.net                     700                 [ OK ]
+    File: /etc/passwd                        700                [ OK ]
+    File: /etc/passwd-                       700                 [ OK ]
+    File: /etc/ssh/sshd_config               400                 [ OK ]
+    Directory: /etc/cron.d                   700                 [ OK ]
+    Directory: /etc/cron.daily               700                 [ OK ]
+    Directory: /etc/cron.hourly              700                 [ OK ]
+    Directory: /etc/cron.weekly              700                 [ OK ]
+    Directory: /etc/cron.monthly             700                 [ OK ]
