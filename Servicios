@@ -9,7 +9,7 @@ sudo service fail2ban restart
 sudo service fail2ban stop
 sudo service fail2ban start
 
-###########  Deshabilite los servicios de Linux no deseados ##############
+###########  Deshabilite los servicios de Linux (MAS ANTIGUOS) no deseados ##############
 chkconfig --list | grep '3:on'
 
 service serviceName stop
@@ -20,8 +20,10 @@ chkconfig serviceName off
  systemctl list-unit-files --type=service
  systemctl list-dependencies graphical.target
  
- ########### Apagar e iniciar el servicio en el momento del arranque ######
+ ########### HABILITAR o DESHABILITAR el servicio en el momento del arranque ######
 systemctl disable service
+systemctl enable service
+
 systemctl disable httpd.service
 systemctl enable httpd.service
 
