@@ -20,13 +20,11 @@ chkconfig serviceName off
  systemctl list-unit-files --type=service
  systemctl list-dependencies graphical.target
  
- ########### Apague el servicio en el momento del arranque ######
+ ########### Apagar e iniciar el servicio en el momento del arranque ######
 systemctl disable service
 systemctl disable httpd.service
+systemctl enable httpd.service
 
-###### Iniciar/detener/reiniciar servicio #########
-systemctl disable service
-systemctl disable httpd.service
 
 ######### Obtener estado del servicio ######
  systemctl status service
