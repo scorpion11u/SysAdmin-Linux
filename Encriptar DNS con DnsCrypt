@@ -1,0 +1,39 @@
+#############################################################################################
+#         Dnscrypt se usa para cifrar nuestras peticiones , el ISP ( Proovedor de servicio de internet , ve donde nos conectamos mas no que hacemos,
+# ejemplo si nos conectamos a Youtube ,sabran que estamos en Youtube mas no que videos estamos visualizando ) su utilidad radica en  tener una mayor
+# privacidad en nuestra navegacion , funciona como un servicio o demonio ###
+##############################################################################################
+# 1)  Intalar dnscrypt 
+
+sudo apt install dnscrypt-proxy
+
+# NOTA: Una vez intalado modificar el siguiente archivo ( /etc/dnscrypt-proxy/dnscrypt-proxy.toml ) , una vez dentro solo modificar (server_names = ),
+# por los que estan aca , 0j0 hay muchisimos mas los puedes buscar aca ( https://dnscrypt.info/public-servers/) o en otras listas,
+# solo uso estos por mi comodidad 
+
+--------------
+# 2) Modificar /etc/dnscrypt-proxy/dnscrypt-proxy.toml 
+
+server_names = ['acsacsar-ams-ipv4', 'ams-dnscrypt-nl', 'dnscrypt.be', 'scaleway-ams', 'scaleway-fr', 'dnswarden-eu-uncensor-dcv4',
+'meganerd', 'pwoss.org-dnscrypt', 'dns.watch']
+
+---------------
+# 3) En el Archivo /etc/resolv.conf dejar de esta manera
+
+nameserver 127.0.2.1
+
+#NOTA: tambien lo puedes hacer desde la interfaz grafica agregando 127.0.2.1 como tu servidor DNS
+
+-----------
+# 4) reiniciar servicios necesarios
+
+systemctl restart dnscrypt-proxy
+service NetworkManager restart
+
+------
+# 5) Verificar que esta funcionando, ingresando a un website y que esa web aparezca en el log.
+
+systemctl status dnscrypt-proxy
+tail -f /var/log/dnscrypt-proxy/query.log
+
+####################### FIN ################################
