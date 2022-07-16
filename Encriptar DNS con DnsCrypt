@@ -32,9 +32,12 @@ systemctl restart dnscrypt-proxy
 service NetworkManager restart
 
 ------
-# 5) Verificar que esta funcionando, ingresando a un website y que esa web aparezca en el log.
+# 5) Verificar que esta funcionando verificando su estado , e ingresando a un website y que esa web aparezca en el log.
 
 systemctl status dnscrypt-proxy
 tail -f /var/log/dnscrypt-proxy/query.log
+
+#  Ejemplo de lo que se se ve en el log :  [2022-07-16 14:50:50]	127.0.0.1	accounts.google.com	A	PASS	165ms	acsacsar-ams-ipv4
+
 
 ####################### FIN ################################
