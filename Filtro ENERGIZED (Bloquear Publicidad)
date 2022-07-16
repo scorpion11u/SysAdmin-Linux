@@ -1,0 +1,16 @@
+#######################################################################
+# Energized es un filtro que bloquea URL invasivas a la privacidad  y llenas de Publicidad y rastreadores #
+
+# 1) Intalar Energized Protection , antes de intalar ejecutar pwd , para saber donde se descargara.
+
+      git clone https://github.com/EnergizedProtection/Energized_Linux
+
+# 2) Una Vez descargado entrar en  Energized_Linux y ejecutar el script " energized.sh "
+
+# 3) Escoger el filtro Basico que es el numero 4  , es el mejor , a partir del 5 podrian afectar el funcionamiento de algunas paginas web
+
+# 4) Si es de tu gusto puedes agregar el filtro de redes sociales presionando S
+
+# 5) Siempre puedes limpiar los filtros presionando C
+
+# Fin
