@@ -1,7 +1,8 @@
 #############################################################################################
 #         Dnscrypt se usa para cifrar nuestras peticiones , el ISP ( Proovedor de servicio de internet , ve donde nos conectamos mas no que hacemos,
 # ejemplo si nos conectamos a Youtube ,sabran que estamos en Youtube mas no que videos estamos visualizando ) su utilidad radica en  tener una mayor
-# privacidad en nuestra navegacion , funciona como un servicio o demonio ###
+# privacidad en nuestra navegacion , el proxy funciona como un servicio local, es una forma efectiva de evitar ataques de hombre en el medio y 
+# envenamiento de DNS , ya que la peticion va cifrada desde el servidor hasta nuestro equipo ###
 ##############################################################################################
 # 1)  Intalar dnscrypt 
 
@@ -22,7 +23,7 @@ server_names = ['acsacsar-ams-ipv4', 'ams-dnscrypt-nl', 'dnscrypt.be', 'scaleway
 
 nameserver 127.0.2.1
 
-#NOTA: tambien lo puedes hacer desde la interfaz grafica agregando 127.0.2.1 como tu servidor DNS
+# NOTA: tambien lo puedes hacer desde la interfaz grafica agregando 127.0.2.1 como tu servidor DNS
 
 -----------
 # 4) reiniciar servicios necesarios
