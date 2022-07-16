@@ -2,7 +2,7 @@
 #         Dnscrypt se usa para cifrar nuestras peticiones , el ISP ( Proovedor de servicio de internet , ve donde nos conectamos mas no que hacemos,
 # ejemplo si nos conectamos a Youtube ,sabran que estamos en Youtube mas no que videos estamos visualizando ) su utilidad radica en  tener una mayor
 # privacidad en nuestra navegacion , el proxy funciona como un servicio local, es una forma efectiva de evitar ataques de hombre en el medio y 
-# envenamiento de DNS , ya que la peticion va cifrada desde el servidor hasta nuestro equipo ###
+# envenamiento de DNS , ya que la peticion va cifrada desde el servidor hasta nuestro equipo , en WINDOWS usar " simple-Dnscrypt" ###
 ##############################################################################################
 # 1)  Intalar dnscrypt 
 
