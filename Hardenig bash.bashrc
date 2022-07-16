@@ -1,0 +1,10 @@
+#############################################################
+# Agregar estas lineas al final   "  nano /etc/bash.bashrc  "
+#############################################################
+
+umask 027
+readonly TMOUT=1800
+export TMOUT
+
+#############################################
+# Su funcion es en mi caso cerrar la terminal despues de no usar (1800 segundos = 1/2 hora ), el tiempo es a su gusto , lo recomendable son 15 min.
