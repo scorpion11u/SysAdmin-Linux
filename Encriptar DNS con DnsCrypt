@@ -40,4 +40,46 @@ tail -f /var/log/dnscrypt-proxy/query.log
 #  Ejemplo de lo que se se ve en el log :  [2022-07-16 14:50:50]	127.0.0.1	accounts.google.com	A	PASS	165ms	acsacsar-ams-ipv4
 
 
-####################### FIN ################################
+####################### ADEMAS PODEMOS BLOQUEAR PUBLICIDAD SIGUIENDO LOS SIGUIENTES PASOS ################################
+
+1) Ruta al archivo de reglas de bloqueo
+       blacklist_file = ' touch /etc/dnscrypt-proxy/blacklist.txt ' 
+
+# Guarde y cierre el archivo.
+
+# Instalación de la lista de bloqueadores de anuncios para el proxy dnscrypt
+
+2) Aquí hay un pequeño script bash para descargar y actualizar la lista , crear ( touch /etc/dnscrypt-proxy/update-adblocker.sh ) dentro colocar el script.
+---------------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash 
+# Nombre: update-adblocker.sh 
+# Propósito: Descargar y actualizar la lista de bloqueadores de anuncios para el proxy dnscrypt 
+# Uso: Llámelo desde la CLI o trabajo cron https://www.cyberciti.biz/faq/how- do-i-add-jobs-to-cron-under-linux-or-unix-oses/ 
+DEST = "/etc/dnscrypt-proxy/blacklist.txt" 
+# 
+# Bloquea tanto el adware como el malware 
+# Consulte otras listas https: //github.com/StevenBlack/hosts 
+SRC = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" 
+TMP_B_FILE = " $(mktemp) " 
+TMP_B_FILE_SORTED = " $(mktemp) " 
+wget  --timeout = 10 --intentos = 5  -qO-  " ${SRC} "  |  grep  -Ev  "(servidor local)"  |  grep  -Ev  "#"  |  sed  -E  "s/(0.0.0.0 |127.0.0.1 |255.255.255.255 )//"  >>  " ${TMP_B_FILE} " 
+awk  '/^[^#]/ { imprimir $1 }'  " ${TMP_B_FILE} "  |  ordenar  -u  >  " ${TMP_B_FILE_SORTED} " 
+cp  -f  " ${TMP_B_FILE_SORTED} "  " $DEST "
+  "  " ${TMP_B_FILE_SORTED} "
+Ejecútelo: Verifíquelo
+./update-adblocker.sh
+
+:
+-----------------------------------------------------------------------------------------------------------------------------------------------
+3) Ejecutar 
+
+sh /etc/dnscrypt-proxy/update-adblocker.sh
+
+more /etc/dnscrypt-proxy/blacklist.txt
+
+4) Asegúrese de ejecutar el script update-adblocker.sh diariamente para obtener una lista actualizada del archivo de hosts. Agregue un nuevo trabajo cron de la siguiente manera:
+  @daily /path/to/update-adblocker.sh
+  
+  ############## FIN ########################
+            
+            
