@@ -1,0 +1,16 @@
+
+# Crear Archivo
+nano /etc/grub.d/init-pwd
+
+# Generar Clave del GRUB
+grub-mkpasswd-pbkdf2 
+
+# Contenido del fichero :
+------------------------------------
+
+cat <<EOF
+set SUPERUSER "root"
+password_pbkdf2  grub.pbkdf2.sha512.10000.819CD4980E43AFB9CE997F6A6B806C6F
+
+-------------------------------------
+
