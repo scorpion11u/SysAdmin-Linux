@@ -20,3 +20,10 @@ ufw status verbose
 echo
 # Nota recordar que  enp11s0 es el nombre de mi interface
 # Con un ifconfig sabras el nombre de tu interface 
+######################### Deshabilitar IPV6 ##############################################
+
+nano /etc/default/ufw
+
+# /etc/default/ufw
+# Set to yes to apply rules to support IPv6 (no means only IPv6 on loopback
+IPV6=no
