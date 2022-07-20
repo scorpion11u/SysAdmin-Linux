@@ -5,6 +5,7 @@ ufw reset
 echo 
 echo Cerramos todo el trafico hacia nuestro equipo, nos quedaremos sin internet.
 echo
+sudo ufw logging on
 sudo ufw default deny incoming
 sudo ufw default deny outgoing
 sudo ufw default deny routed
