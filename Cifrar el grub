@@ -6,11 +6,12 @@ nano /etc/grub.d/init-pwd
 grub-mkpasswd-pbkdf2 
 
 # Contenido del fichero :
-------------------------------------
+----------------------------
 
 cat <<EOF
-set SUPERUSER "root"
-password_pbkdf2  grub.pbkdf2.sha512.10000.819CD4980E43AFB9CE997F6A6B806C6F
-
+set superuser= "root"
+password_pbkdf2 root grub.pbkdf2.sha512.10000.5E1A8F457EF986F05D42BB562A19D7D25B
+EOF
 -------------------------------------
 
+update-grub
