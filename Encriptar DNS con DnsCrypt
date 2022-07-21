@@ -15,9 +15,12 @@ sudo apt install dnscrypt-proxy
 --------------
 # 2) Modificar /etc/dnscrypt-proxy/dnscrypt-proxy.toml 
 
-server_names = ['acsacsar-ams-ipv4', 'ams-dnscrypt-nl', 'dnscrypt.be', 'scaleway-ams', 'scaleway-fr', 'deffer-dns.au', 'd0wn-tz-ns1', 'dnscrypt.ca-1',
-'meganerd', 'pwoss.org-dnscrypt', 'dns.watch', 'dnscrypt.ca-1', 'dnscrypt.ca-2', 'dnswarden-uncensor-fr1-dc', 'faelix-ch-ipv4', 'ibksturm',
-'opennic-R4SAS', 'plan9dns-fl', 'sth-dnscrypt-se', 'techsaviours.org-dnscrypt', 'v.dnscrypt.uk-ipv4', 'plan9dns-nj']
+server_names = ['acsacsar-ams-ipv4', 'ams-dnscrypt-nl', 'dnscrypt.be', 'scaleway-ams', 'scaleway-fr', 'deffer-dns.au', 'd0wn-tz-ns1',
+ 'dnscrypt.ca-1', 'meganerd', 'pwoss.org-dnscrypt', 'dns.watch', 'dnscrypt.ca-1', 'dnscrypt.ca-2', 'dnswarden-uncensor-fr1-dc', 'faelix-ch-ipv4',
+ 'ibksturm', 'opennic-R4SAS', 'plan9dns-fl', 'sth-dnscrypt-se', 'techsaviours.org-dnscrypt', 'v.dnscrypt.uk-ipv4', 'plan9dns-nj',
+ 'dnswarden-uncensor-us1-dc', 'ffmuc.net']
+
+
 
 ---------------
 # 3) En el Archivo /etc/resolv.conf dejar de esta manera
