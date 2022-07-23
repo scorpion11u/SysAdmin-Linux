@@ -55,25 +55,29 @@ tail -f /var/log/dnscrypt-proxy/query.log
 
 2) Aquí hay un pequeño script bash para descargar y actualizar la lista , crear ( touch /etc/dnscrypt-proxy/update-adblocker.sh ) dentro colocar el script.
 ---------------------------------------------------------------------------------------------------------------------------------
-#!/bin/bash 
-# Nombre: update-adblocker.sh 
-# Propósito: Descargar y actualizar la lista de bloqueadores de anuncios para el proxy dnscrypt 
-# Uso: Llámelo desde la CLI o trabajo cron https://www.cyberciti.biz/faq/how- do-i-add-jobs-to-cron-under-linux-or-unix-oses/ 
-DEST = "/etc/dnscrypt-proxy/blacklist.txt" 
-# 
-# Bloquea tanto el adware como el malware 
-# Consulte otras listas https: //github.com/StevenBlack/hosts 
-SRC = "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" 
-TMP_B_FILE = " $(mktemp) " 
-TMP_B_FILE_SORTED = " $(mktemp) " 
-wget  --timeout = 10 --intentos = 5  -qO-  " ${SRC} "  |  grep  -Ev  "(servidor local)"  |  grep  -Ev  "#"  |  sed  -E  "s/(0.0.0.0 |127.0.0.1 |255.255.255.255 )//"  >>  " ${TMP_B_FILE} " 
-awk  '/^[^#]/ { imprimir $1 }'  " ${TMP_B_FILE} "  |  ordenar  -u  >  " ${TMP_B_FILE_SORTED} " 
-cp  -f  " ${TMP_B_FILE_SORTED} "  " $DEST "
-  "  " ${TMP_B_FILE_SORTED} "
-Ejecútelo: Verifíquelo
-./update-adblocker.sh
-
-:
+#!/bin/bash
+# Name: update-adblocker.sh
+# Purpose: Download and update adblocker list for dnscrypt proxy
+# Usage: Call it from the CLI or cron job https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/
+echo
+echo  Archivo  donde se alojara la lista de StevenBlack
+echo
+DEST="/etc/dnscrypt-proxy/blacklist.txt"
+#####################################################
+echo  1  Bloquea  adware + malware 
+echo  listas de https://github.com/StevenBlack/hosts
+SRC="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+echo  2  Bloquea  fakenews-gambling-social
+SRC="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts"
+######################################################
+TMP_B_FILE="$(mktemp)"
+TMP_B_FILE_SORTED="$(mktemp)"
+wget --timeout=10 --tries=5 -qO- "${SRC}" | grep -Ev "(localhost)" | grep -Ev "#" | sed -E "s/(0.0.0.0 |127.0.0.1 |255.255.255.255 )/>
+awk '/^[^#]/ { print $1 }' "${TMP_B_FILE}" | sort -u > "${TMP_B_FILE_SORTED}"
+cp -f "${TMP_B_FILE_SORTED}" "$DEST"
+echo
+echo FIN
+echo
 -----------------------------------------------------------------------------------------------------------------------------------------------
 3) Ejecutar 
 
