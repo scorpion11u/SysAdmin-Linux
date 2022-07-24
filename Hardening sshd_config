@@ -21,8 +21,8 @@ Include /etc/ssh/sshd_config.d/*.conf
 Subsystem sftp internal-sftp
 AllowStreamLocalForwarding no
 DisableForwarding yes
-
-
+AllowUsers tususuarios
+AllowGroups tugrupo
 ################################
 # Este puerto 22 puede ser cambiado por el que gustes
 Port 51236
