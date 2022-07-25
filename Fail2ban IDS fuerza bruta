@@ -1,0 +1,38 @@
+1) Intalacion
+
+apt update
+apt install fail2ban -y
+
+2) Crear jail.local ( Meter en jail.local los servicios contra ataque de fuerza bruta )
+
+nano /etc/fail2ban/jail.local
+
+3) En jail.local , copiar lo siguiente , en este caso para  el ssh, si tienes mas agregarlos esta es la forma de configurarlo.
+
+[sshd]
+maxretry=3
+bantime=24h
+findtime=5m
+port=51236
+logpath=/var/log/fail2ban.log
+
+4) Reiniciar el servicio
+
+service fail2ban restart
+
+5) revisar los registros para verificar que se realizo el cambio 
+tail -f -n 20 /var/log/fail2ban.log 
+
+ Starting Fail2ban v0.11.2
+ 23:58:15,833 fail2ban.observer       [83552]: INFO    Observer start...
+ 23:58:15,852 fail2ban.database       [83552]: INFO    Connected to fail2ban persistent database '/var/lib/fail2ban/fail2ban.sqlite3'
+ 23:58:15,854 fail2ban.jail           [83552]: INFO    Creating new jail 'sshd'
+ 23:58:15,933 fail2ban.jail           [83552]: INFO    Jail 'sshd' uses pyinotify {}
+ 23:58:15,938 fail2ban.jail           [83552]: INFO    Initiated 'pyinotify' backend
+ 23:58:15,941 fail2ban.filter         [83552]: INFO      maxLines: 1
+ 23:58:15,966 fail2ban.filter         [83552]: INFO      maxRetry: 3
+ 23:58:15,966 fail2ban.filter         [83552]: INFO      findtime: 300
+ 23:58:15,967 fail2ban.actions        [83552]: INFO      banTime: 86400
+ 23:58:15,967 fail2ban.filter         [83552]: INFO      encoding: UTF-8
+ 23:58:15,974 fail2ban.filter         [83552]: INFO    Added logfile: '/var/log/fail2ban.log' (pos = 6163, hash = 225f84d950a6ed973135a894a25b53a11af0641c)
+ 23:58:15,984 fail2ban.jail           [83552]: INFO    Jail 'sshd' started
