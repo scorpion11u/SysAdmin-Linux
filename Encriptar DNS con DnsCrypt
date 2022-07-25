@@ -13,15 +13,35 @@ sudo apt install dnscrypt-proxy
 # solo uso estos por mi comodidad 
 
 --------------
-# 2) Modificar /etc/dnscrypt-proxy/dnscrypt-proxy.toml 
+# 2) Modificar /etc/dnscrypt-proxy/dnscrypt-proxy.toml  --------> LINUX
 
-server_names = ['acsacsar-ams-ipv4', 'ams-dnscrypt-nl', 'dnscrypt.be', 'scaleway-ams', 'scaleway-fr', 'deffer-dns.au', 'd0wn-tz-ns1',
- 'dnscrypt.ca-1', 'meganerd', 'pwoss.org-dnscrypt', 'dns.watch', 'dnscrypt.ca-1', 'dnscrypt.ca-2', 'dnswarden-uncensor-fr1-dc', 'faelix-ch-ipv4',
- 'ibksturm', 'opennic-R4SAS', 'plan9dns-fl', 'sth-dnscrypt-se', 'techsaviours.org-dnscrypt', 'v.dnscrypt.uk-ipv4', 'plan9dns-nj',
- 'dnswarden-uncensor-us1-dc', 'ffmuc.net']
+# Empty listen_addresses to use systemd socket activation
+#listen_addresses = []
+#server_names = ['cloudflare']
+listen_addresses = ['127.0.0.1:5353']
+######## Servidores con DnsCrypt ##############################
 
+server_names = ['acsacsar-ams-ipv4','ams-dnscrypt-nl','dnscrypt.be','scaleway-ams','scaleway-fr','deffer-dns.au','d0wn-tz-ns1','dnscrypt.ca-1', 'meganerd', 'pwoss.org-dnscrypt',
+'dns.watch','dnscrypt.ca-1','dnscrypt.ca-2','dnswarden-uncensor-fr1-dc','faelix-ch-ipv4','ibksturm','opennic-R4SAS','plan9dns-fl','sth-dnscrypt-se','techsaviours.org-dnscrypt',
+'v.dnscrypt.uk-ipv4','plan9dns-nj','dnswarden-uncensor-us1-dc','ffmuc.net']
 
+###### Registros ######
 
+[query_log]
+  file = '/var/log/dnscrypt-proxy/query.log'
+
+[nx_log]
+  file = '/var/log/dnscrypt-proxy/nx.log'
+#####################
+
+[sources]
+  [sources.'public-resolvers']
+  url = 'https://download.dnscrypt.info/resolvers-list/v2/public-resolvers.md'
+  cache_file = '/var/cache/dnscrypt-proxy/public-resolvers.md'
+  minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
+  refresh_delay = 72
+  prefix = ''
+####################
 ---------------
 # 3) En el Archivo /etc/resolv.conf dejar de esta manera
 
@@ -47,7 +67,7 @@ tail -f /var/log/dnscrypt-proxy/query.log
 ####################### ADEMAS PODEMOS BLOQUEAR PUBLICIDAD SIGUIENDO LOS SIGUIENTES PASOS ################################
 
 1) Ruta al archivo de reglas de bloqueo
-       blacklist_file = ' touch /etc/dnscrypt-proxy/blacklist.txt ' 
+       blacklist_file = ' nano /etc/dnscrypt-proxy/blacklist.txt ' 
 
 # Guarde y cierre el archivo.
 
@@ -80,8 +100,9 @@ echo FIN
 echo
 -----------------------------------------------------------------------------------------------------------------------------------------------
 3) Ejecutar 
-
-sh /etc/dnscrypt-proxy/update-adblocker.sh
+nano /home/usuario/update-adblocker.sh
+chmod +x  /home/usuario/update-adblocker.sh
+sh /home/usuario/update-adblocker.sh
 
 more /etc/dnscrypt-proxy/blacklist.txt
 
