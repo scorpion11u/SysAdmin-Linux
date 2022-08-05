@@ -21,3 +21,5 @@
     Directory: /etc/cron.hourly              700                 [ OK ]
     Directory: /etc/cron.weekly              700                 [ OK ]
     Directory: /etc/cron.monthly             700                 [ OK ]
+
+               /etc/sudoers.d                700
