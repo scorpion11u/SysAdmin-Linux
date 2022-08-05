@@ -14,4 +14,6 @@ password_pbkdf2 root grub.pbkdf2.sha512.10000.5E1A8F457EF986F05D42BB562A19D7D25B
 EOF
 -------------------------------------
 
+chmod +x /etc/grub.d/init-pwd
+
 update-grub
