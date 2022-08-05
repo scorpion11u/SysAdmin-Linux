@@ -35,6 +35,8 @@ sudo apt-get update --fix-missing
 3)- Seguidamente usaremos apt para intentar corregir las dependencias rotas
 sudo apt-get install -f
 
+apt-get install --reinstall  paquete
+
 4)- En el caso que sigan los problemas borraremos las lock files de apt y dpkg. 
 sudo rm /var/lib/apt/lists/lock && sudo rm /var/cache/apt/archives/lock && sudo rm /var/lib/dpkg/lock
 
