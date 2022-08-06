@@ -20,10 +20,16 @@ sudo apt install dnscrypt-proxy
 #server_names = ['cloudflare']
 listen_addresses = ['127.0.0.1:5353']
 ######## Servidores con DnsCrypt ##############################
+#server_names = ['acsacsar-ams-ipv4','ams-dnscrypt-nl','dnscrypt.be','scaleway-ams','scaleway-fr','deffer-dns.au','d0wn-tz-ns1','dnscrypt.ca-1', 'meganerd', 'pwoss.org-dnscrypt',
+#'dns.watch','dnscrypt.ca-1','dnscrypt.ca-2','dnswarden-uncensor-fr1-dc','faelix-ch-ipv4','ibksturm','opennic-R4SAS','plan9dns-fl','sth-dnscrypt-se','techsaviours.org-dnscrypt',
+#'v.dnscrypt.uk-ipv4','plan9dns-nj','dnswarden-uncensor-us1-dc','ffmuc.net']
 
-server_names = ['acsacsar-ams-ipv4','ams-dnscrypt-nl','dnscrypt.be','scaleway-ams','scaleway-fr','deffer-dns.au','d0wn-tz-ns1','dnscrypt.ca-1', 'meganerd', 'pwoss.org-dnscrypt',
-'dns.watch','dnscrypt.ca-1','dnscrypt.ca-2','dnswarden-uncensor-fr1-dc','faelix-ch-ipv4','ibksturm','opennic-R4SAS','plan9dns-fl','sth-dnscrypt-se','techsaviours.org-dnscrypt',
-'v.dnscrypt.uk-ipv4','plan9dns-nj','dnswarden-uncensor-us1-dc','ffmuc.net']
+[anonymized_dns]
+routes = [
+    { server_name='acsacsar-ams-ipv4', via=['anon-cs-austria', 'anon-cs-barcelona', 'anon-cs-belgium', 'anon-cs-berlin',
+ 'anon-cs-brazil', 'anon-cs-bulgaria', 'anon-cs-finland', 'anon-cs-fr', 'anon-cs-hungary', 'anon-cs-ireland', 'anon-cs-is',
+'anon-cs-manchester', 'anon-cs-montreal', 'anon-cs-norway', 'anon-cs-pt', 'anon-cs-swe', 'anon-cs-sydney', 'anon-ibksturm'] }
+]
 
 ###### Registros ######
 
@@ -41,7 +47,7 @@ server_names = ['acsacsar-ams-ipv4','ams-dnscrypt-nl','dnscrypt.be','scaleway-am
   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
   refresh_delay = 72
   prefix = ''
-####################
+#########################################################################
 ---------------
 # 3) En el Archivo /etc/resolv.conf dejar de esta manera
 
