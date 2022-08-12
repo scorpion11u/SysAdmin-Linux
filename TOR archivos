@@ -1,0 +1,5 @@
+1) nano /etc/tor/torrc 
+
+DNSPort 53
+AutomapHostsOnResolve 1
+AutomapHostsSuffixes .exit,.onion
