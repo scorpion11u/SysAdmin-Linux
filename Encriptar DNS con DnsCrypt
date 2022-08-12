@@ -26,12 +26,9 @@ listen_addresses = ['127.0.0.1:5353']
 
 [anonymized_dns]
 routes = [
-   { server_name='d0wn-tz-ns1',   via=['anon-cs-is', 'anon-cs-barcelona', 'anon-cs-brazil'] },
-   { server_name='dnscrypt.ca-2', via=['anon-cs-fr', 'anon-cs-hungary', 'anon-cs-ireland'] },
-   { server_name='opennic-R4SAS', via=['anon-cs-norway', 'anon-cs-swe', 'anon-cs-sydney'] },
-   { server_name='ibksturm',      via=['anon-ibksturm', 'anon-cs-manchester', 'anon-cs-bulgaria'] },
-   { server_name='scaleway-fr',   via=['anon-cs-manchester', 'anon-cs-barcelona'] },
-
+   { server_name='acsacsar-ams-ipv4',   via=['anon-cs-is', 'anon-cs-barcelona', 'anon-cs-brazil'] },
+   { server_name='dnscrypt.ca-1',       via=['anon-cs-fr', 'anon-cs-hungary', 'anon-cs-ireland'] },
+  ]
 
 ###### Registros ######
 
