@@ -1,4 +1,9 @@
-                                      1 ) /etc/shorewall/interfaces
+###############################################################################################
+                           sudo apt instal shorewall
+
+EN ESTA RUTA SE ENCUENTRAN LOS ARCHIVOS DE EJEMPLO :/usr/share/doc/shorewall/examples , esta configuracion es de una sola interface.
+                             
+                             1 ) /etc/shorewall/interfaces
 
 #------------------------------------------------------------------------------
 # For information about entries in this file, type "man shorewall-interfaces"
