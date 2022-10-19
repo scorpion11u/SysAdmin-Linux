@@ -135,7 +135,9 @@ tail -f /var/log/dnscrypt-proxy/query.log
 
 # Instalación de la lista de bloqueadores de anuncios para el proxy dnscrypt
 
-2) Aquí hay un pequeño script bash para descargar y actualizar la lista , crear ( touch /etc/dnscrypt-proxy/update-adblocker.sh ) dentro colocar el script.
+2) Aquí hay un pequeño script bash para descargar y actualizar la lista , crear ( touch /etc/dnscrypt-proxy/update-adblocker.sh ) dentro colocar
+el script.                       
+INFO : https://www.cyberciti.biz/faq/how-to-install-dnscrypt-proxy-with-adblocker-on-linux/
 ---------------------------------------------------------------------------------------------------------------------------------
 #
 #!/bin/bash
