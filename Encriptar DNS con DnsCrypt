@@ -33,6 +33,14 @@ require_dnssec = true
 require_nolog = true
 require_nofilter = true
 max_clients = 250
+timeout = 1000
+keepalive = 30
+blocked_query_response = 'refused'
+cert_refresh_delay = 240
+dnscrypt_ephemeral_keys = true
+block_unqualified = true
+block_undelegated = true
+reject_ttl = 10
 ###########################
 #        DNS cache        #
 ###########################
@@ -52,20 +60,16 @@ cache_neg_max_ttl = 600
 ############ LOGs  ###################################################
 # Maximum log files size in MB - Set to 0 for unlimited.
 log_files_max_size = 10
-
 # How long to keep backup files, in days
 log_files_max_age = 7
-
 # Maximum log files backups to keep (or 0 to keep all backups)
 log_files_max_backups = 1
-
 ############## Tor ###############
 ## Enable support for HTTP/3 (DoH3, HTTP over QUIC)
 ## Note that, like DNSCrypt but unlike other HTTP versions, this uses
 ## UDP and (usually) port 443 instead of TCP.
 
 #http3 = false
-
 
 ## SOCKS proxy
 ## Uncomment the following line to route all TCP connections to a local Tor node
@@ -78,11 +82,6 @@ log_files_max_backups = 1
 ## Only for DoH servers
   # http_proxy = 'http://127.0.0.1:8888'
 #8888
-
-####### Block ################
-[blacklist]
-log_file = '/var/log/dnscrypt-proxy/blacklist.log'
-
 ######################### ANONIMIZAR consultas . Poner los que quieras , estan en la lista dnscrypt.org ##################
 [anonymized_dns]
 routes = [
@@ -113,7 +112,9 @@ routes = [
 
 [nx_log]
   file = '/var/log/dnscrypt-proxy/nx.log'
-
+####### Block ################
+[blacklist]
+log_file = '/var/log/dnscrypt-proxy/blacklist.log'
 ##############################################
 [sources]
   [sources.'public-resolvers']
@@ -123,9 +124,6 @@ routes = [
   minisign_key = 'RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3'
   refresh_delay = 72
   prefix = ''
-
-
-
 ################################################################################################
 ------------------------------------------------------------------------------------------------
 # 3) En el Archivo /etc/resolv.conf dejar de esta manera
