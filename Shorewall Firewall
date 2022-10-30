@@ -12,6 +12,8 @@ EN ESTA RUTA SE ENCUENTRAN LOS ARCHIVOS DE EJEMPLO :/usr/share/doc/shorewall/exa
 ###############################################################################
 #ZONE   INTERFACE       OPTIONS
 net     NET_IF          dhcp,tcpflags,logmartians,nosmurfs,sourceroute=0,physical=enp11s0
+#vpn     tun0            dhcp,tcpflags,logmartians,nosmurfs,sourceroute=0,physical=tun0
+
 
                                       2) policy
 
@@ -23,6 +25,11 @@ $FW     net             ACCEPT
 net     all             DROP            $LOG_LEVEL
 # The FOLLOWING POLICY MUST BE LAST
 all     all             REJECT          $LOG_LEVEL#
+
+########## VPN ############################
+
+#   vpn    $FW        ACCEPT
+#   $FW    vpn        ACCEPT 
 
 
                                       3) rules
@@ -64,6 +71,7 @@ NTP(ACCEPT)     $FW             net
 #                                       OPTIONS                 OPTIONS
 fw      firewall
 net     ipv4
+# vpn  ipv4
 
 
 
